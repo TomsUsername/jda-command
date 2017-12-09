@@ -143,7 +143,7 @@ public class CommandHandler {
     public void execute(Command command, Message message, String args,Connection... conn) {
         CommandDescription cd = command.getDescription();
         if (cd == null) return;
-        command.execute(message, args.trim());
+        command.execute(message, args.trim(),conn);
     }
 
     /**

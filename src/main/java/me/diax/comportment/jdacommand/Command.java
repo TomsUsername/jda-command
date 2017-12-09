@@ -39,7 +39,7 @@ public interface Command extends Comparable<Command> {
      * @param args    The arguments of the commands.
      * @since 1.0.0
      */
-    void execute(Message message, String args,Connection... conn);
+    void execute(Message message, String args,@Nullable Connection... conn);
 
     @Override
     default int compareTo(@Nullable Command that) {
