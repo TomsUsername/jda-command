@@ -18,6 +18,8 @@ package me.diax.comportment.jdacommand;
 
 import net.dv8tion.jda.core.entities.Message;
 
+import com.rethinkdb.net.Connection;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -138,7 +140,7 @@ public class CommandHandler {
      * @param args    The arguments of the command.
      * @since 1.0.0
      */
-    public void execute(Command command, Message message, String args) {
+    public void execute(Command command, Message message, String args,Connection... conn) {
         CommandDescription cd = command.getDescription();
         if (cd == null) return;
         command.execute(message, args.trim());

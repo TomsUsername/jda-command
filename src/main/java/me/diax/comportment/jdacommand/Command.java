@@ -18,6 +18,8 @@ package me.diax.comportment.jdacommand;
 
 import net.dv8tion.jda.core.entities.Message;
 
+import com.rethinkdb.net.Connection;
+
 import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.Objects;
@@ -37,7 +39,7 @@ public interface Command extends Comparable<Command> {
      * @param args    The arguments of the commands.
      * @since 1.0.0
      */
-    void execute(Message message, String args);
+    void execute(Message message, String args,Connection... conn);
 
     @Override
     default int compareTo(@Nullable Command that) {
